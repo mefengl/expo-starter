@@ -1,5 +1,4 @@
 import { ThemedText } from '@/components/ThemedText'
-import { StyleSheet } from 'react-native'
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
@@ -22,15 +21,7 @@ export function HelloWave() {
 
   return (
     <Animated.View style={animatedStyle}>
-      <ThemedText style={styles.text}>👋</ThemedText>
+      <ThemedText className="mt-[-6px] text-[28px] leading-[32px]">👋</ThemedText>
     </Animated.View>
   )
 }
-
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 28,
-    lineHeight: 32,
-    marginTop: -6,
-  },
-})

@@ -2,7 +2,7 @@ import { HelloWave } from '@/components/HelloWave'
 import ParallaxScrollView from '@/components/ParallaxScrollView'
 import { ThemedText } from '@/components/ThemedText'
 import { ThemedView } from '@/components/ThemedView'
-import { Image, Platform, StyleSheet } from 'react-native'
+import { Image, Platform } from 'react-native'
 
 export default function HomeScreen() {
   return (
@@ -10,16 +10,16 @@ export default function HomeScreen() {
       headerBackgroundColor={{ dark: '#1D3D47', light: '#A1CEDC' }}
       headerImage={(
         <Image
+          className="absolute bottom-0 left-0 h-[178px] w-[290px]"
           source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
         />
       )}
     >
-      <ThemedView style={styles.titleContainer}>
+      <ThemedView className="flex-row items-center gap-2">
         <ThemedText type="title">Welcome!</ThemedText>
         <HelloWave />
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
+      <ThemedView className="mb-2 gap-2">
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
           Edit
@@ -36,13 +36,13 @@ export default function HomeScreen() {
           to open developer tools.
         </ThemedText>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
+      <ThemedView className="mb-2 gap-2">
         <ThemedText type="subtitle">Step 2: Explore</ThemedText>
         <ThemedText>
           Tap the Explore tab to learn more about what's included in this starter app.
         </ThemedText>
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
+      <ThemedView className="mb-2 gap-2">
         <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
         <ThemedText>
           When you're ready, run
@@ -66,22 +66,3 @@ export default function HomeScreen() {
     </ParallaxScrollView>
   )
 }
-
-const styles = StyleSheet.create({
-  reactLogo: {
-    bottom: 0,
-    height: 178,
-    left: 0,
-    position: 'absolute',
-    width: 290,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  titleContainer: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    gap: 8,
-  },
-})

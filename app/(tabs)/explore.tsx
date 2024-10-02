@@ -4,15 +4,15 @@ import ParallaxScrollView from '@/components/ParallaxScrollView'
 import { ThemedText } from '@/components/ThemedText'
 import { ThemedView } from '@/components/ThemedView'
 import Ionicons from '@expo/vector-icons/Ionicons'
-import { Image, Platform, StyleSheet } from 'react-native'
+import { Image, Platform } from 'react-native'
 
 export default function TabTwoScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ dark: '#353636', light: '#D0D0D0' }}
-      headerImage={<Ionicons name="code-slash" size={310} style={styles.headerImage} />}
+      headerImage={<Ionicons className="absolute bottom-[-90px] left-[-35px] text-gray-500" name="code-slash" size={310} />}
     >
-      <ThemedView style={styles.titleContainer}>
+      <ThemedView className="flex-row gap-2">
         <ThemedText type="title">Explore</ThemedText>
       </ThemedView>
       <ThemedText>This app includes example code to help you get started.</ThemedText>
@@ -59,7 +59,7 @@ export default function TabTwoScreen() {
           suffixes to provide files for
           different screen densities
         </ThemedText>
-        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
+        <Image className="self-center" source={require('@/assets/images/react-logo.png')} />
         <ExternalLink href="https://reactnative.dev/docs/images">
           <ThemedText type="link">Learn more</ThemedText>
         </ExternalLink>
@@ -72,7 +72,7 @@ export default function TabTwoScreen() {
           {' '}
           to see how to load
           {' '}
-          <ThemedText style={{ fontFamily: 'SpaceMono' }}>
+          <ThemedText className="font-SpaceMono">
             custom fonts such as this one.
           </ThemedText>
         </ThemedText>
@@ -121,16 +121,3 @@ export default function TabTwoScreen() {
     </ParallaxScrollView>
   )
 }
-
-const styles = StyleSheet.create({
-  headerImage: {
-    bottom: -90,
-    color: '#808080',
-    left: -35,
-    position: 'absolute',
-  },
-  titleContainer: {
-    flexDirection: 'row',
-    gap: 8,
-  },
-})
